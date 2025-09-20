@@ -71,16 +71,18 @@
 
 ## Phase 3.5: Polish
 - [ ] T019 [P] Unit tests for validation in tests/unit/test_validation.py
-- [ ] T020 Performance tests (<200ms)
-- [ ] T021 [P] Update docs/api.md
-- [ ] T022 Remove duplication
-- [ ] T023 Run manual-testing.md
+- [ ] T020 [P] Performance tests (≤2s page load, ≤500ms API response)
+- [ ] T021 [P] Code quality checks and static analysis
+- [ ] T022 [P] UI accessibility and responsive design validation
+- [ ] T023 [P] Update docs/api.md
+- [ ] T024 Remove duplication and refactor
+- [ ] T025 Run manual-testing.md
 
 ## Dependencies
 - Tests (T004-T007) before implementation (T008-T014)
 - T008 blocks T009, T015
 - T016 blocks T018
-- Implementation before polish (T019-T023)
+- Implementation before polish (T019-T025)
 
 ## Parallel Example
 ```

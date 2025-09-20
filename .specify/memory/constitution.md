@@ -1,50 +1,60 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: Template → 1.0.0
+- Added principles: Code Quality, Testing Standards, User Experience Consistency, Performance Requirements
+- Added sections: Development Standards, Quality Gates
+- Templates requiring updates: ✅ plan-template.md, ✅ spec-template.md, ✅ tasks-template.md
+- No deferred items
+-->
+
+# TD-Web Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Code Quality
+All code MUST meet production standards before merging. Code MUST be readable, 
+maintainable, and follow established patterns. Static analysis tools MUST pass 
+without warnings. Code reviews MUST verify adherence to style guides and architectural 
+decisions. No "quick fixes" or temporary code in main branches.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Testing Standards (NON-NEGOTIABLE)
+Test-Driven Development MUST be followed: write failing tests before implementation. 
+All features MUST have unit tests with ≥80% coverage. Integration tests MUST cover 
+critical user paths. Contract tests MUST validate API boundaries. Performance tests 
+MUST verify response time requirements. All tests MUST pass before deployment.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. User Experience Consistency
+User interfaces MUST follow established design patterns and accessibility standards. 
+Loading states, error messages, and user feedback MUST be consistent across the 
+application. Mobile responsiveness MUST be verified on target devices. User interactions 
+MUST be intuitive and follow platform conventions.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Performance Requirements
+Frontend pages MUST load within 2 seconds on average devices. API responses MUST 
+complete within 500ms for standard operations. Database queries MUST be optimized 
+and indexed appropriately. Resource usage MUST be monitored and alerts configured 
+for degradation. Performance regression tests MUST be included in CI/CD pipeline.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Development Standards
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Code MUST follow language-specific best practices and security guidelines. 
+Dependencies MUST be kept up-to-date and security-scanned. Environment configurations 
+MUST be managed through proper configuration management. Logging MUST be structured 
+and include correlation IDs for request tracing. Error handling MUST be comprehensive 
+with appropriate user-facing messages.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Quality Gates
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+All pull requests MUST pass automated testing, security scans, and code quality checks. 
+Peer review MUST verify business logic correctness and architectural alignment. 
+Deployment MUST include smoke tests and rollback procedures. Production monitoring 
+MUST verify system health post-deployment.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices and guidelines. 
+All feature development MUST comply with these principles before merging to main. 
+Amendments require team consensus and impact assessment on existing processes. 
+Exceptions require explicit justification and technical lead approval.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-09-21 | **Last Amended**: 2025-09-21

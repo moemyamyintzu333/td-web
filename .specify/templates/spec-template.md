@@ -78,6 +78,12 @@ When creating this spec from a user prompt:
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Non-Functional Requirements *(include as applicable)*
+- **NFR-001**: Performance MUST meet [specific targets, e.g., "page load ≤2s, API response ≤500ms"]
+- **NFR-002**: User interface MUST follow [design standards, e.g., "accessibility WCAG 2.1 AA"]  
+- **NFR-003**: System MUST be responsive on [target devices, e.g., "mobile devices 375px+"]
+- **NFR-004**: Error handling MUST provide [user experience, e.g., "clear, actionable messages"]
+
 ### Key Entities *(include if feature involves data)*
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]

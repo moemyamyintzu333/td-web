@@ -1,8 +1,8 @@
 
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Simple Todo-List Web Application
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**Branch**: `001-build-a-very` | **Date**: 2025-09-21 | **Spec**: [spec.md](./spec.md)
+**Input**: Feature specification from `/Users/moemyamyintzu/td-web/specs/001-build-a-very/spec.md`
 
 ## Execution Flow (/plan command scope)
 ```
@@ -31,50 +31,50 @@
 - Phase 3-4: Implementation execution (manual or via tools)
 
 ## Summary
-[Extract from feature spec: primary requirement + technical approach from research]
+Simple web-based todo list application allowing users to add, view, complete, and delete todo items. Built with Vite, vanilla HTML/CSS/JavaScript, and local SQLite database for minimal complexity while meeting constitutional performance and quality standards.
 
 ## Technical Context
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: JavaScript ES2020+ with Vite 4.x for build tooling  
+**Primary Dependencies**: Vite (build), SQLite3 (storage), minimal additional libraries  
+**Storage**: Local SQLite database for todo metadata and persistence  
+**Testing**: Vitest for unit testing, Playwright for integration testing  
+**Target Platform**: Modern web browsers (Chrome 90+, Firefox 88+, Safari 14+)
+**Project Type**: web - determines frontend+backend structure  
+**Performance Goals**: Page load ≤2s, user interactions ≤500ms response time  
+**Constraints**: Minimal dependencies, vanilla JS preferred, no image uploads  
+**Scale/Scope**: Single-user application, ~1000 todo items maximum expected
 
 ## Constitution Check
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
 **Code Quality Gates**:
-- [ ] Technical approach follows established patterns and best practices
-- [ ] Static analysis tools integrated into development workflow
-- [ ] Code review process defined with clear criteria
+- [x] Technical approach follows established patterns and best practices
+- [x] Static analysis tools integrated into development workflow  
+- [x] Code review process defined with clear criteria
 
 **Testing Standards Gates**:
-- [ ] TDD approach confirmed: Tests written before implementation
-- [ ] Unit test coverage target ≥80% established
-- [ ] Integration and contract test strategy defined
-- [ ] Performance test requirements specified
+- [x] TDD approach confirmed: Tests written before implementation
+- [x] Unit test coverage target ≥80% established
+- [x] Integration and contract test strategy defined
+- [x] Performance test requirements specified
 
 **User Experience Gates**:
-- [ ] UI consistency standards and design patterns identified
-- [ ] Accessibility requirements defined
-- [ ] Mobile responsiveness targets specified
-- [ ] User feedback and error handling approach outlined
+- [x] UI consistency standards and design patterns identified
+- [x] Accessibility requirements defined
+- [x] Mobile responsiveness targets specified
+- [x] User feedback and error handling approach outlined
 
 **Performance Gates**:
-- [ ] Frontend load time targets ≤2 seconds confirmed
-- [ ] API response time targets ≤500ms established
-- [ ] Database optimization strategy planned
-- [ ] Performance monitoring and alerting defined
+- [x] Frontend load time targets ≤2 seconds confirmed
+- [x] API response time targets ≤500ms established
+- [x] Database optimization strategy planned
+- [x] Performance monitoring and alerting defined
 
 ## Project Structure
 
 ### Documentation (this feature)
 ```
-specs/[###-feature]/
+specs/001-build-a-very/
 ├── plan.md              # This file (/plan command output)
 ├── research.md          # Phase 0 output (/plan command)
 ├── data-model.md        # Phase 1 output (/plan command)
@@ -85,18 +85,6 @@ specs/[###-feature]/
 
 ### Source Code (repository root)
 ```
-# Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
 # Option 2: Web application (when "frontend" + "backend" detected)
 backend/
 ├── src/
@@ -111,16 +99,9 @@ frontend/
 │   ├── pages/
 │   └── services/
 └── tests/
-
-# Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure]
 ```
 
-**Structure Decision**: [DEFAULT to Option 1 unless Technical Context indicates web/mobile app]
+**Structure Decision**: Option 2 (Web application) - Frontend handles UI with vanilla JS, backend provides SQLite API endpoints
 
 ## Phase 0: Outline & Research
 1. **Extract unknowns from Technical Context** above:
@@ -180,18 +161,29 @@ ios/ or android/
 
 **Task Generation Strategy**:
 - Load `.specify/templates/tasks-template.md` as base
-- Generate tasks from Phase 1 design docs (contracts, data model, quickstart)
-- Each contract → contract test task [P]
-- Each entity → model creation task [P] 
-- Each user story → integration test task
-- Implementation tasks to make tests pass
+- Generate tasks from Phase 1 design docs (data-model.md, contracts/api-todos.md, quickstart.md)
+- API contract (api-todos.md) → 4 contract test tasks [P] (GET, POST, PUT, DELETE)
+- Todo entity → model creation and service tasks [P]
+- Quickstart scenarios → 5 integration test tasks covering user journeys
+- Implementation tasks: frontend components, backend API, database setup
 
 **Ordering Strategy**:
-- TDD order: Tests before implementation 
-- Dependency order: Models before services before UI
-- Mark [P] for parallel execution (independent files)
+- TDD order: Contract tests → Integration tests → Implementation
+- Dependency order: Database setup → Models → Services → API → Frontend
+- Mark [P] for parallel execution where files are independent
+- Frontend and backend tasks can be largely parallel after contracts
 
-**Estimated Output**: 25-30 numbered, ordered tasks in tasks.md
+**Specific Task Categories**:
+1. **Setup**: Vite config, Node.js/Express setup, SQLite database, ESLint/Prettier
+2. **Database**: Schema creation, migration scripts, connection setup
+3. **Backend Tests**: API contract tests, model tests, service tests
+4. **Frontend Tests**: Component tests, integration tests for user scenarios
+5. **Backend Implementation**: Todo model, API routes, database service
+6. **Frontend Implementation**: UI components, API client, event handlers
+7. **Integration**: CORS setup, error handling, performance optimization
+8. **Polish**: Code quality, documentation, performance validation
+
+**Estimated Output**: ~30 numbered, ordered tasks in tasks.md
 
 **IMPORTANT**: This phase is executed by the /tasks command, NOT by /plan
 
@@ -215,18 +207,18 @@ ios/ or android/
 *This checklist is updated during execution flow*
 
 **Phase Status**:
-- [ ] Phase 0: Research complete (/plan command)
-- [ ] Phase 1: Design complete (/plan command)
-- [ ] Phase 2: Task planning complete (/plan command - describe approach only)
+- [x] Phase 0: Research complete (/plan command)
+- [x] Phase 1: Design complete (/plan command)
+- [x] Phase 2: Task planning complete (/plan command - describe approach only)
 - [ ] Phase 3: Tasks generated (/tasks command)
 - [ ] Phase 4: Implementation complete
 - [ ] Phase 5: Validation passed
 
 **Gate Status**:
-- [ ] Initial Constitution Check: PASS
-- [ ] Post-Design Constitution Check: PASS
-- [ ] All NEEDS CLARIFICATION resolved
+- [x] Initial Constitution Check: PASS
+- [x] Post-Design Constitution Check: PASS
+- [x] All NEEDS CLARIFICATION resolved
 - [ ] Complexity deviations documented
 
 ---
-*Based on Constitution v2.1.1 - See `/memory/constitution.md`*
+*Based on Constitution v1.0.0 - See `.specify/memory/constitution.md`*
