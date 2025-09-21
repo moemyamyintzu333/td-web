@@ -1,0 +1,35 @@
+Database connected successfully
+TD-Web Backend Server running on port 3000
+Health check: http://localhost:3000/health
+2025-09-21T13:29:41.627Z - GET /api/v1/todos
+2025-09-21T13:30:09.424Z - GET /api/v1/todos
+2025-09-21T13:30:09.893Z - GET /api/v1/todos
+2025-09-21T13:30:29.533Z - GET /api/v1/todos
+2025-09-21T13:30:30.945Z - GET /api/v1/todos
+2025-09-21T13:30:30.946Z - GET /api/v1/todos
+2025-09-21T13:30:30.948Z - GET /api/v1/todos
+2025-09-21T13:30:30.948Z - GET /api/v1/todos
+2025-09-21T13:30:32.022Z - GET /api/v1/todos
+2025-09-21T13:30:32.417Z - GET /api/v1/todos
+2025-09-21T13:30:32.468Z - GET /api/v1/todos
+2025-09-21T13:30:33.028Z - POST /api/v1/todos
+2025-09-21T13:30:33.093Z - GET /api/v1/todos
+2025-09-21T13:30:33.217Z - GET /api/v1/todos
+2025-09-21T13:30:34.378Z - GET /api/v1/todos
+2025-09-21T13:30:34.380Z - GET /api/v1/todos
+2025-09-21T13:30:36.168Z - GET /api/v1/todos
+2025-09-21T13:30:37.156Z - GET /api/v1/todos
+2025-09-21T13:30:37.498Z - GET /api/v1/todos
+2025-09-21T13:30:38.021Z - GET /api/v1/todos
+2025-09-21T13:43:55.332Z - GET /api/v1/todos
+2025-09-21T13:43:55.359Z - GET /api/v1/todos
+2025-09-21T13:43:56.961Z - GET /api/v1/todos
+2025-09-21T13:43:58.777Z - GET /api/v1/todos
+2025-09-21T13:44:02.923Z - GET /api/v1/todos
+2025-09-21T13:44:02.940Z - GET /api/v1/todos
+2025-09-21T13:44:15.846Z - GET /api/v1/todos
+2025-09-21T13:44:17.385Z - GET /api/v1/todos
+2025-09-21T13:44:17.403Z - GET /api/v1/todos
+2025-09-21T13:44:18.283Z - GET /api/v1/todos
+2025-09-21T13:44:19.961Z - GET /api/v1/todos
+2025-09-21T13:44:25.017Z - GET /api/v1/todos

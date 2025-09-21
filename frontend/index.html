@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD-Web Todo List</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TD-Web Todo List</h1>
+            <p>A simple todo application following TD-Web Constitution v1.0.0</p>
+        </header>
+
+        <main class="app-main">
+            <!-- Add Todo Form -->
+            <section class="add-todo-section">
+                <form id="add-todo-form" data-testid="add-todo-form" class="add-todo-form">
+                    <div class="form-group">
+                        <label for="todo-input" class="sr-only">Enter a new todo</label>
+                        <input 
+                            type="text" 
+                            id="todo-input" 
+                            data-testid="todo-input"
+                            class="todo-input" 
+                            placeholder="What needs to be done?"
+                            maxlength="500"
+                            aria-label="Enter a new todo"
+                            required
+                        >
+                        <button 
+                            type="submit" 
+                            data-testid="add-todo-button"
+                            class="add-todo-button"
+                            aria-label="Add todo"
+                        >
+                            Add Todo
+                        </button>
+                    </div>
+                </form>
+                <div id="error-message" data-testid="error-message" class="error-message hidden"></div>
+            </section>
+
+            <!-- Todo List -->
+            <section class="todo-list-section">
+                <div id="loading" class="loading hidden">Loading todos...</div>
+                <ul id="todo-list" data-testid="todo-list" class="todo-list"></ul>
+                <div id="empty-message" data-testid="empty-message" class="empty-message hidden">
+                    <p>No todos yet. Add one above to get started!</p>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="stats-section">
+                <div class="stats">
+                    <span id="total-count">0 todos</span>
+                    <span id="completed-count">0 completed</span>
+                    <span id="pending-count">0 pending</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 TD-Web Todo List - Following TD-Web Constitution v1.0.0</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

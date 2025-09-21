@@ -1,6 +1,11 @@
 # Tasks: Simple Todo-List Web Application
 
-**Input**: Design documents from `/Users/moemyamyintzu/td-web/specs/001-build-a-very/`
+*## Pha- [x] T003 [P] Initialize frontend Vite project with minimal dependencies in frontend/
+- [x] T004 [P] Configure ESLint and Prettier for both frontend and backend
+- [x] T005 Setup SQLite database schema and migrations in backend/src/database/3.1: Setup
+- [x] T001 Create web application project structure per implementation plan
+- [x] T002 [P] Initialize backend Node.js project with Express and SQLite3 dependencies in backend/
+- [x] T003 [P] Initialize frontend Vite project with minimal dependencies in frontend/ut**: Design documents from `/Users/moemyamyintzu/td-web/specs/001-build-a-very/`
 **Prerequisites**: plan.md (required), research.md, data-model.md, contracts/
 
 ## Execution Flow (main)
@@ -43,7 +48,7 @@
 - Paths adjusted for web application structure per plan.md
 
 ## Phase 3.1: Setup
-- [ ] T001 Create web application project structure per implementation plan
+- [x] T001 Create web application project structure per implementation plan
 - [ ] T002 [P] Initialize backend Node.js project with Express and SQLite3 dependencies in backend/
 - [ ] T003 [P] Initialize frontend Vite project with minimal dependencies in frontend/
 - [ ] T004 [P] Configure ESLint and Prettier for both frontend and backend
