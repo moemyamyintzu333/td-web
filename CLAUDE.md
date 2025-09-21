@@ -2,7 +2,7 @@
 
 Auto-generated from all feature plans. Last updated: 2025-09-21
 
-## Active Technologies
+## Acive Technologies
 - JavaScript ES2020+ + Vite 4.x (001-build-a-very)
 - Node.js + Express.js + SQLite3 (001-build-a-very)
 
